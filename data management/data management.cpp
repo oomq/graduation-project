@@ -85,6 +85,7 @@ int liveQRCodeDetect(const string& out_file)//**检测程序**//
 			decode_info = qrcode.decode(src, transform, straight_barcode);//解码器
 			if (!decode_info.empty()) {
 				cout << decode_info << endl;     //解码后输出一次返回
+				waitKey(2000);
 				return  0;
 			}
 
@@ -102,6 +103,7 @@ int liveQRCodeDetect(const string& out_file)//**检测程序**//
 			break;
 		if (c == ' ' && !out_file.empty())
 			imwrite(out_file, frame); // TODO write original frame too
+			
 	}
 	return 0;
 }
